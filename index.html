@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Hover Effect</title>
+    <style>
+        /* Container for circle of circles */
+        .circle-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+        }
+
+        /* Individual circle */
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin: -50px;
+            border-radius: 50%;
+            border: 0px solid black;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+#circle1 { background-image: url("https://eduks.fi/media/joni/digit.png");
+}
+#circle2 { background-image: url("https://eduks.fi/media/joni/eotr.png");
+}
+#circle3 {
+    background-image: url("https://eduks.fi/media/joni/innov.png");
+}
+#circle4 {
+    background-image: url("https://eduks.fi/media/joni/koulutus.png");
+}
+#circle5 {
+    background-image: url("https://eduks.fi/media/joni/kehitys.png");
+}
+#circle6 {
+    background-image: url("https://eduks.fi/media/joni/digarit.png");
+}
+#circle7 {
+    background-image: url("https://eduks.fi/media/joni/tuki.png");
+}
+#circle8 { background-image: url("https://eduks.fi/media/joni/eduks1.png");
+}
+
+#circle9 { background-image: url("https://eduks.fi/media/joni/strategia.png");
+}
+#circle10 {
+    background-image: url("https://eduks.fi/media/joni/palvmuo.png");
+}
+
+        /* Positioning each circle */
+        .circle-container .circle:nth-child(1) { transform: rotate(18deg) translate(200px) rotate(-18deg); }
+        .circle-container .circle:nth-child(2) { transform: rotate(54deg) translate(200px) rotate(-54deg); }
+        .circle-container .circle:nth-child(3) { transform: rotate(90deg) translate(200px) rotate(-90deg); }
+        .circle-container .circle:nth-child(4) { transform: rotate(126deg) translate(200px) rotate(-126deg); }
+        .circle-container .circle:nth-child(5) { transform: rotate(162deg) translate(200px) rotate(-162deg); }
+        .circle-container .circle:nth-child(6) { transform: rotate(196deg) translate(200px) rotate(-196deg); }
+        .circle-container .circle:nth-child(7) { transform: rotate(234deg) translate(200px) rotate(-234deg); }
+        .circle-container .circle:nth-child(8) { transform: rotate(270deg) translate(200px) rotate(-270deg); }
+        .circle-container .circle:nth-child(9) { transform: rotate(306deg) translate(200px) rotate(-306deg); }
+        .circle-container .circle:nth-child(10) { transform: rotate(342deg) translate(200px) rotate(-342deg); }
+
+        /* Center text */
+        #centerText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for circle of circles -->
+    <div class="circle-container">
+        <!-- The round circles with data-text attribute -->
+        <div class="circle" id="circle1" data-text="Circle 1"></div>
+        <div class="circle" id="circle2" data-text="Circle 2"></div>
+        <div class="circle" id="circle3" data-text="Circle 3"></div>
+        <div class="circle" id="circle4" data-text="Circle 4"></div>
+        <div class="circle" id="circle5" data-text="Circle 5"></div>
+        <div class="circle" id="circle6" data-text="Circle 6"></div>
+        <div class="circle" id="circle7" data-text="Circle 7"></div>
+        <div class="circle" id="circle8" data-text="Circle 8"></div>
+        <div class="circle" id="circle9" data-text="Circle 9"></div>
+        <div class="circle" id="circle10" data-text="Circle 10"></div>
+        
+        <!-- The center text -->
+        <h1 id="centerText">Hover over a circle!</h1>
+    </div>
+
+    <script>
+        const centerText = document.getElementById('centerText');
+        const circles = document.querySelectorAll('.circle');
+
+        circles.forEach(circle => {
+            circle.addEventListener('mouseover', function() {
+                const text = this.getAttribute('data-text');
+                centerText.textContent = text;
+            });
+        });
+    </script>
+</body>
+</html>
