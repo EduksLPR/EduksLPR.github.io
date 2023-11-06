@@ -11,6 +11,8 @@
             width: 400px;
             height: 400px;
             margin: 50px auto;
+			background-color: #7CDE79;
+			border-radius: 200px;
         }
 
         /* Individual circle */
@@ -75,39 +77,97 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 24px;
+            font-size: 16px;
+			text-align: center;
+			background-color: transparent;
         }
     </style>
 </head>
 <body>
     <!-- Container for circle of circles -->
     <div class="circle-container">
-        <!-- The round circles with data-text attribute -->
-        <div class="circle" id="circle1" data-text="Circle 1"></div>
-        <div class="circle" id="circle2" data-text="Circle 2"></div>
-        <div class="circle" id="circle3" data-text="Circle 3"></div>
-        <div class="circle" id="circle4" data-text="Circle 4"></div>
-        <div class="circle" id="circle5" data-text="Circle 5"></div>
-        <div class="circle" id="circle6" data-text="Circle 6"></div>
-        <div class="circle" id="circle7" data-text="Circle 7"></div>
-        <div class="circle" id="circle8" data-text="Circle 8"></div>
-        <div class="circle" id="circle9" data-text="Circle 9"></div>
-        <div class="circle" id="circle10" data-text="Circle 10"></div>
+        <!-- The round circles with data-html attribute -->
+        
+<div class="circle" id="circle1"
+data-html="DIGITIIMIT*
+Digitiimit ohjaavat toimintaamme ja
+huolehtivat Digitaalisen koulutuksen
+toimintasuunnitelman
+jalkauttamisesta."></div>
+
+<div class="circle" id="circle2"
+data-html="EDUKS ON THE ROAD*
+Jalkaudemme kentälle. Pidämme
+Inspiraatio-oppitunteja,
+kuuntelemme henkilöstöä ja
+uutisoimme digimaailman
+tuoreimmista innovaatioista."></div>
+
+<div class="circle" id="circle3"
+data-html="INNOVERSTAS*
+Keksintöverstas ja uusiokäyttökeskus
+Lappeenrannan sydämessä."></div>
+
+<div class="circle" id="circle4"
+data-html="KOULUTUKSET*
+Järjestämme jatkuvasti
+koulutuksia, sekä ylläpidämme
+koulutuskalenteria."></div>
+
+<div class="circle" id="circle5"
+data-html="KEHITTÄMISTOIMINTA*
+Hämmenny hankkeista.
+Kehitämme jatkuvasti uutta!"></div>
+
+<div class="circle" id="circle6"
+data-html="DIGARITOIMINTA*
+Kysy apua digarilta. Digarit ovat
+Eduksin lähituki yksiköissä."></div>
+
+<div class="circle" id="circle7"
+data-html="TEKNINEN TUKI*
+Varhaiskasvatuksen,
+perusopetuksen ja
+lukiokoulutuksen teknisen tuen
+ensivasteyksikkö."></div>
+
+<div class="circle" id="circle8"
+data-html="MIKÄ ON EDUKS*
+Päätehtävämme on kehittää varhaiskasvatuksen ja
+opetustoimen henkilöstön osaamista sekä toimia
+digitaalisen osaamisen tuki- ja kehittämisyksikkönä.
+olemme aktiivisia verkostoitujia ja tuomme
+lappeenrannallepositiivista näkyvyyttä
+valtakunnallisesti."></div>
+		
+<div class="circle" id="circle9"
+data-html="STRATEGIA*
+Toimintamme tukee kaupungin strategian
+toteutumista. Olemme valmistelleet
+intressiryhmien kanssa Digitaalisen
+koulutuksen toimintasuunnitelman."></div>
+
+<div class="circle" id="circle10"
+data-html="PALVELUMUOTOILU*
+Osallistamme intressiryhmät.
+Pidämme joka toinen vuosi
+palvelumuotoilukeskustelut."></div>
         
         <!-- The center text -->
         <h1 id="centerText">Hover over a circle!</h1>
     </div>
 
-    <script>
-        const centerText = document.getElementById('centerText');
-        const circles = document.querySelectorAll('.circle');
+<script>
+    const centerText = document.getElementById('centerText');
+    const circles = document.querySelectorAll('.circle');
 
-        circles.forEach(circle => {
-            circle.addEventListener('mouseover', function() {
-                const text = this.getAttribute('data-text');
-                centerText.textContent = text;
-            });
+    circles.forEach(circle => {
+        circle.addEventListener('mouseover', function() {
+            const text = this.getAttribute('data-html');
+            centerText.innerHTML = '<b><p>' + text.split('*')[0] + '</p></b>' + text.slice(text.indexOf('*'));
+			centerText.innerHTML = centerText.innerHTML.replace(/\*/g, "");
         });
-    </script>
+    });
+</script>
 </body>
 </html>
