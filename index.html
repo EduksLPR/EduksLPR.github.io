@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circle Hover Effect</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
         /* Container for circle of circles */
         .circle-container {
@@ -11,8 +15,8 @@
             width: 400px;
             height: 400px;
             margin: 50px auto;
-			background-color: #7CDE79;
 			border-radius: 200px;
+            border: 1px solid black;
         }
 
         /* Individual circle */
@@ -30,6 +34,13 @@
             cursor: pointer;
             transition: transform 0.5s;
         }
+
+h2 {
+  font-family: 'Bebas Neue', sans-serif;
+}
+p {
+  font-family: 'Bebas Neue', sans-serif;
+}
 
 #circle1 { background-image: url("https://eduks.fi/media/joni/digit.png");
 }
@@ -78,6 +89,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 16px;
+			 font-family: 'Roboto', sans-serif; 
 			text-align: center;
 			background-color: transparent;
         }
@@ -164,7 +176,7 @@ palvelumuotoilukeskustelut."></div>
     circles.forEach(circle => {
         circle.addEventListener('mouseover', function() {
             const text = this.getAttribute('data-html');
-            centerText.innerHTML = '<b><p>' + text.split('*')[0] + '</p></b>' + text.slice(text.indexOf('*'));
+            centerText.innerHTML = '<h2>' + text.split('*')[0] + '</h2>' + text.slice(text.indexOf('*'));
 			centerText.innerHTML = centerText.innerHTML.replace(/\*/g, "");
         });
     });
